@@ -1,0 +1,64 @@
++-------+------+--------------+
+| Index | Char | Is deletable |
++-------+------+--------------+
+| 1.0   | 'P'  | True         |
+| 1.1   | 'r'  | True         |
+| 1.2   | 'e'  | True         |
+| 1.3   | 'f'  | True         |
+| 1.4   | 'i'  | True         |
+| 1.5   | 'x'  | True         |
+| 1.6   | '\n' | False        |
+| 2.0   | '#'  | False        |
+| 2.1   | ' '  | False        |
+| 2.2   | 's'  | False        |
+| 2.3   | 'e'  | False        |
+| 2.4   | 'a'  | False        |
+| 2.5   | 'l'  | False        |
+| 2.6   | 'e'  | False        |
+| 2.7   | 'd'  | False        |
+| 2.8   | ':'  | False        |
+| 2.9   | ' '  | False        |
+| 2.10  | 'o'  | False        |
+| 2.11  | 'n'  | False        |
+| 2.12  | ' '  | False        |
+| 2.13  | '7'  | False        |
+| 2.14  | '4'  | False        |
+| 2.15  | '1'  | False        |
+| 2.16  | 'b'  | False        |
+| 2.17  | 'e'  | False        |
+| 2.18  | 'c'  | False        |
+| 2.19  | '9'  | False        |
+| 2.20  | '3'  | False        |
+| 2.21  | '\n' | False        |
+| 3.0   | 'S'  | False        |
+| 3.1   | 'u'  | False        |
+| 3.2   | 'f'  | False        |
+| 3.3   | 'f'  | False        |
+| 3.4   | 'i'  | False        |
+| 3.5   | 'x'  | False        |
+| 3.6   | '\n' | False        |
+| 4.0   | '#'  | False        |
+| 4.1   | ' '  | False        |
+| 4.2   | 's'  | False        |
+| 4.3   | 'e'  | False        |
+| 4.4   | 'a'  | False        |
+| 4.5   | 'l'  | False        |
+| 4.6   | 'e'  | False        |
+| 4.7   | 'd'  | False        |
+| 4.8   | ':'  | False        |
+| 4.9   | ' '  | False        |
+| 4.10  | 'o'  | False        |
+| 4.11  | 'f'  | False        |
+| 4.12  | 'f'  | False        |
+| 4.13  | ' '  | False        |
+| 4.14  | '7'  | False        |
+| 4.15  | '4'  | False        |
+| 4.16  | '1'  | False        |
+| 4.17  | 'b'  | False        |
+| 4.18  | 'e'  | False        |
+| 4.19  | 'c'  | False        |
+| 4.20  | '9'  | False        |
+| 4.21  | '3'  | False        |
+| 4.22  | '\n' | False        |
+| 5.0   | '\n' | True         |
++-------+------+--------------+

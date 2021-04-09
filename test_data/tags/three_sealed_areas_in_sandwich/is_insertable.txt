@@ -1,0 +1,183 @@
++-------+------+---------------------+---------------------+-------------------+
+| Index | Char | Is insertable '\nx' | Is insertable 'x\n' | Is insertable 'x' |
++-------+------+---------------------+---------------------+-------------------+
+| 1.0   | 'a'  | True                | True                | True              |
+| 1.1   | '\n' | True                | True                | True              |
+| 2.0   | '#'  | False               | True                | False             |
+| 2.1   | ' '  | False               | False               | False             |
+| 2.2   | 's'  | False               | False               | False             |
+| 2.3   | 'e'  | False               | False               | False             |
+| 2.4   | 'a'  | False               | False               | False             |
+| 2.5   | 'l'  | False               | False               | False             |
+| 2.6   | 'e'  | False               | False               | False             |
+| 2.7   | 'd'  | False               | False               | False             |
+| 2.8   | ':'  | False               | False               | False             |
+| 2.9   | ' '  | False               | False               | False             |
+| 2.10  | 'o'  | False               | False               | False             |
+| 2.11  | 'n'  | False               | False               | False             |
+| 2.12  | ' '  | False               | False               | False             |
+| 2.13  | '5'  | False               | False               | False             |
+| 2.14  | 'b'  | False               | False               | False             |
+| 2.15  | 'e'  | False               | False               | False             |
+| 2.16  | '7'  | False               | False               | False             |
+| 2.17  | '7'  | False               | False               | False             |
+| 2.18  | '2'  | False               | False               | False             |
+| 2.19  | 'b'  | False               | False               | False             |
+| 2.20  | '3'  | False               | False               | False             |
+| 2.21  | '\n' | False               | False               | False             |
+| 3.0   | 't'  | False               | False               | False             |
+| 3.1   | 'e'  | False               | False               | False             |
+| 3.2   | 'x'  | False               | False               | False             |
+| 3.3   | 't'  | False               | False               | False             |
+| 3.4   | ' '  | False               | False               | False             |
+| 3.5   | 'b'  | False               | False               | False             |
+| 3.6   | '\n' | False               | False               | False             |
+| 4.0   | '#'  | False               | False               | False             |
+| 4.1   | ' '  | False               | False               | False             |
+| 4.2   | 's'  | False               | False               | False             |
+| 4.3   | 'e'  | False               | False               | False             |
+| 4.4   | 'a'  | False               | False               | False             |
+| 4.5   | 'l'  | False               | False               | False             |
+| 4.6   | 'e'  | False               | False               | False             |
+| 4.7   | 'd'  | False               | False               | False             |
+| 4.8   | ':'  | False               | False               | False             |
+| 4.9   | ' '  | False               | False               | False             |
+| 4.10  | 'o'  | False               | False               | False             |
+| 4.11  | 'f'  | False               | False               | False             |
+| 4.12  | 'f'  | False               | False               | False             |
+| 4.13  | ' '  | False               | False               | False             |
+| 4.14  | '5'  | False               | False               | False             |
+| 4.15  | 'b'  | False               | False               | False             |
+| 4.16  | 'e'  | False               | False               | False             |
+| 4.17  | '7'  | False               | False               | False             |
+| 4.18  | '7'  | False               | False               | False             |
+| 4.19  | '2'  | False               | False               | False             |
+| 4.20  | 'b'  | False               | False               | False             |
+| 4.21  | '3'  | False               | False               | False             |
+| 4.22  | '\n' | True                | False               | False             |
+| 5.0   | 't'  | True                | True                | True              |
+| 5.1   | 'e'  | True                | True                | True              |
+| 5.2   | 'x'  | True                | True                | True              |
+| 5.3   | 't'  | True                | True                | True              |
+| 5.4   | ' '  | True                | True                | True              |
+| 5.5   | 'c'  | True                | True                | True              |
+| 5.6   | '\n' | True                | True                | True              |
+| 6.0   | '#'  | False               | True                | False             |
+| 6.1   | ' '  | False               | False               | False             |
+| 6.2   | 's'  | False               | False               | False             |
+| 6.3   | 'e'  | False               | False               | False             |
+| 6.4   | 'a'  | False               | False               | False             |
+| 6.5   | 'l'  | False               | False               | False             |
+| 6.6   | 'e'  | False               | False               | False             |
+| 6.7   | 'd'  | False               | False               | False             |
+| 6.8   | ':'  | False               | False               | False             |
+| 6.9   | ' '  | False               | False               | False             |
+| 6.10  | 'o'  | False               | False               | False             |
+| 6.11  | 'n'  | False               | False               | False             |
+| 6.12  | ' '  | False               | False               | False             |
+| 6.13  | 'd'  | False               | False               | False             |
+| 6.14  | '7'  | False               | False               | False             |
+| 6.15  | 'd'  | False               | False               | False             |
+| 6.16  | 'd'  | False               | False               | False             |
+| 6.17  | '4'  | False               | False               | False             |
+| 6.18  | 'b'  | False               | False               | False             |
+| 6.19  | 'd'  | False               | False               | False             |
+| 6.20  | '8'  | False               | False               | False             |
+| 6.21  | '\n' | False               | False               | False             |
+| 7.0   | 't'  | False               | False               | False             |
+| 7.1   | 'e'  | False               | False               | False             |
+| 7.2   | 'x'  | False               | False               | False             |
+| 7.3   | 't'  | False               | False               | False             |
+| 7.4   | ' '  | False               | False               | False             |
+| 7.5   | 'd'  | False               | False               | False             |
+| 7.6   | '\n' | False               | False               | False             |
+| 8.0   | '#'  | False               | False               | False             |
+| 8.1   | ' '  | False               | False               | False             |
+| 8.2   | 's'  | False               | False               | False             |
+| 8.3   | 'e'  | False               | False               | False             |
+| 8.4   | 'a'  | False               | False               | False             |
+| 8.5   | 'l'  | False               | False               | False             |
+| 8.6   | 'e'  | False               | False               | False             |
+| 8.7   | 'd'  | False               | False               | False             |
+| 8.8   | ':'  | False               | False               | False             |
+| 8.9   | ' '  | False               | False               | False             |
+| 8.10  | 'o'  | False               | False               | False             |
+| 8.11  | 'f'  | False               | False               | False             |
+| 8.12  | 'f'  | False               | False               | False             |
+| 8.13  | ' '  | False               | False               | False             |
+| 8.14  | 'd'  | False               | False               | False             |
+| 8.15  | '7'  | False               | False               | False             |
+| 8.16  | 'd'  | False               | False               | False             |
+| 8.17  | 'd'  | False               | False               | False             |
+| 8.18  | '4'  | False               | False               | False             |
+| 8.19  | 'b'  | False               | False               | False             |
+| 8.20  | 'd'  | False               | False               | False             |
+| 8.21  | '8'  | False               | False               | False             |
+| 8.22  | '\n' | True                | False               | False             |
+| 9.0   | 't'  | True                | True                | True              |
+| 9.1   | 'e'  | True                | True                | True              |
+| 9.2   | 'x'  | True                | True                | True              |
+| 9.3   | 't'  | True                | True                | True              |
+| 9.4   | ' '  | True                | True                | True              |
+| 9.5   | 'e'  | True                | True                | True              |
+| 9.6   | '\n' | True                | True                | True              |
+| 10.0  | '#'  | False               | True                | False             |
+| 10.1  | ' '  | False               | False               | False             |
+| 10.2  | 's'  | False               | False               | False             |
+| 10.3  | 'e'  | False               | False               | False             |
+| 10.4  | 'a'  | False               | False               | False             |
+| 10.5  | 'l'  | False               | False               | False             |
+| 10.6  | 'e'  | False               | False               | False             |
+| 10.7  | 'd'  | False               | False               | False             |
+| 10.8  | ':'  | False               | False               | False             |
+| 10.9  | ' '  | False               | False               | False             |
+| 10.10 | 'o'  | False               | False               | False             |
+| 10.11 | 'n'  | False               | False               | False             |
+| 10.12 | ' '  | False               | False               | False             |
+| 10.13 | 'f'  | False               | False               | False             |
+| 10.14 | '9'  | False               | False               | False             |
+| 10.15 | '2'  | False               | False               | False             |
+| 10.16 | '0'  | False               | False               | False             |
+| 10.17 | 'b'  | False               | False               | False             |
+| 10.18 | '5'  | False               | False               | False             |
+| 10.19 | 'f'  | False               | False               | False             |
+| 10.20 | '6'  | False               | False               | False             |
+| 10.21 | '\n' | False               | False               | False             |
+| 11.0  | 't'  | False               | False               | False             |
+| 11.1  | 'e'  | False               | False               | False             |
+| 11.2  | 'x'  | False               | False               | False             |
+| 11.3  | 't'  | False               | False               | False             |
+| 11.4  | ' '  | False               | False               | False             |
+| 11.5  | 'f'  | False               | False               | False             |
+| 11.6  | '\n' | False               | False               | False             |
+| 12.0  | '#'  | False               | False               | False             |
+| 12.1  | ' '  | False               | False               | False             |
+| 12.2  | 's'  | False               | False               | False             |
+| 12.3  | 'e'  | False               | False               | False             |
+| 12.4  | 'a'  | False               | False               | False             |
+| 12.5  | 'l'  | False               | False               | False             |
+| 12.6  | 'e'  | False               | False               | False             |
+| 12.7  | 'd'  | False               | False               | False             |
+| 12.8  | ':'  | False               | False               | False             |
+| 12.9  | ' '  | False               | False               | False             |
+| 12.10 | 'o'  | False               | False               | False             |
+| 12.11 | 'f'  | False               | False               | False             |
+| 12.12 | 'f'  | False               | False               | False             |
+| 12.13 | ' '  | False               | False               | False             |
+| 12.14 | 'f'  | False               | False               | False             |
+| 12.15 | '9'  | False               | False               | False             |
+| 12.16 | '2'  | False               | False               | False             |
+| 12.17 | '0'  | False               | False               | False             |
+| 12.18 | 'b'  | False               | False               | False             |
+| 12.19 | '5'  | False               | False               | False             |
+| 12.20 | 'f'  | False               | False               | False             |
+| 12.21 | '6'  | False               | False               | False             |
+| 12.22 | '\n' | True                | False               | False             |
+| 13.0  | 't'  | True                | True                | True              |
+| 13.1  | 'e'  | True                | True                | True              |
+| 13.2  | 'x'  | True                | True                | True              |
+| 13.3  | 't'  | True                | True                | True              |
+| 13.4  | ' '  | True                | True                | True              |
+| 13.5  | 'g'  | True                | True                | True              |
+| 13.6  | '\n' | True                | True                | True              |
++-------+------+---------------------+---------------------+-------------------+

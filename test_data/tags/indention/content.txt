@@ -1,0 +1,10 @@
+# sealed: on b287117d
+A
+    B
+    # sealed: off b287117d
+    C
+
+# sealed: on b7a42f76
+D
+    E
+    # sealed: off b7a42f76

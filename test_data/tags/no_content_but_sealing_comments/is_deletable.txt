@@ -1,0 +1,50 @@
++-------+------+--------------+
+| Index | Char | Is deletable |
++-------+------+--------------+
+| 1.0   | '#'  | False        |
+| 1.1   | ' '  | False        |
+| 1.2   | 's'  | False        |
+| 1.3   | 'e'  | False        |
+| 1.4   | 'a'  | False        |
+| 1.5   | 'l'  | False        |
+| 1.6   | 'e'  | False        |
+| 1.7   | 'd'  | False        |
+| 1.8   | ':'  | False        |
+| 1.9   | ' '  | False        |
+| 1.10  | 'o'  | False        |
+| 1.11  | 'n'  | False        |
+| 1.12  | ' '  | False        |
+| 1.13  | '8'  | False        |
+| 1.14  | '8'  | False        |
+| 1.15  | '2'  | False        |
+| 1.16  | '0'  | False        |
+| 1.17  | '9'  | False        |
+| 1.18  | '2'  | False        |
+| 1.19  | '9'  | False        |
+| 1.20  | '4'  | False        |
+| 1.21  | '\n' | False        |
+| 2.0   | '#'  | False        |
+| 2.1   | ' '  | False        |
+| 2.2   | 's'  | False        |
+| 2.3   | 'e'  | False        |
+| 2.4   | 'a'  | False        |
+| 2.5   | 'l'  | False        |
+| 2.6   | 'e'  | False        |
+| 2.7   | 'd'  | False        |
+| 2.8   | ':'  | False        |
+| 2.9   | ' '  | False        |
+| 2.10  | 'o'  | False        |
+| 2.11  | 'f'  | False        |
+| 2.12  | 'f'  | False        |
+| 2.13  | ' '  | False        |
+| 2.14  | '8'  | False        |
+| 2.15  | '8'  | False        |
+| 2.16  | '2'  | False        |
+| 2.17  | '0'  | False        |
+| 2.18  | '9'  | False        |
+| 2.19  | '2'  | False        |
+| 2.20  | '9'  | False        |
+| 2.21  | '4'  | False        |
+| 2.22  | '\n' | False        |
+| 3.0   | '\n' | True         |
++-------+------+--------------+

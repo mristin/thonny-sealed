@@ -1,0 +1,166 @@
++-------+------+--------------+
+| Index | Char | Is deletable |
++-------+------+--------------+
+| 1.0   | '\n' | True         |
+| 2.0   | '#'  | False        |
+| 2.1   | ' '  | False        |
+| 2.2   | 's'  | False        |
+| 2.3   | 'e'  | False        |
+| 2.4   | 'a'  | False        |
+| 2.5   | 'l'  | False        |
+| 2.6   | 'e'  | False        |
+| 2.7   | 'd'  | False        |
+| 2.8   | ':'  | False        |
+| 2.9   | ' '  | False        |
+| 2.10  | 'o'  | False        |
+| 2.11  | 'n'  | False        |
+| 2.12  | ' '  | False        |
+| 2.13  | '8'  | False        |
+| 2.14  | '8'  | False        |
+| 2.15  | '2'  | False        |
+| 2.16  | '0'  | False        |
+| 2.17  | '9'  | False        |
+| 2.18  | '2'  | False        |
+| 2.19  | '9'  | False        |
+| 2.20  | '4'  | False        |
+| 2.21  | '\n' | False        |
+| 3.0   | '#'  | False        |
+| 3.1   | ' '  | False        |
+| 3.2   | 's'  | False        |
+| 3.3   | 'e'  | False        |
+| 3.4   | 'a'  | False        |
+| 3.5   | 'l'  | False        |
+| 3.6   | 'e'  | False        |
+| 3.7   | 'd'  | False        |
+| 3.8   | ':'  | False        |
+| 3.9   | ' '  | False        |
+| 3.10  | 'o'  | False        |
+| 3.11  | 'f'  | False        |
+| 3.12  | 'f'  | False        |
+| 3.13  | ' '  | False        |
+| 3.14  | '8'  | False        |
+| 3.15  | '8'  | False        |
+| 3.16  | '2'  | False        |
+| 3.17  | '0'  | False        |
+| 3.18  | '9'  | False        |
+| 3.19  | '2'  | False        |
+| 3.20  | '9'  | False        |
+| 3.21  | '4'  | False        |
+| 3.22  | '\n' | False        |
+| 4.0   | 's'  | True         |
+| 4.1   | 'o'  | True         |
+| 4.2   | 'm'  | True         |
+| 4.3   | 'e'  | True         |
+| 4.4   | ' '  | True         |
+| 4.5   | 't'  | True         |
+| 4.6   | 'e'  | True         |
+| 4.7   | 'x'  | True         |
+| 4.8   | 't'  | True         |
+| 4.9   | '\n' | True         |
+| 5.0   | '\n' | True         |
+| 6.0   | '#'  | False        |
+| 6.1   | ' '  | False        |
+| 6.2   | 's'  | False        |
+| 6.3   | 'e'  | False        |
+| 6.4   | 'a'  | False        |
+| 6.5   | 'l'  | False        |
+| 6.6   | 'e'  | False        |
+| 6.7   | 'd'  | False        |
+| 6.8   | ':'  | False        |
+| 6.9   | ' '  | False        |
+| 6.10  | 'o'  | False        |
+| 6.11  | 'n'  | False        |
+| 6.12  | ' '  | False        |
+| 6.13  | 'd'  | False        |
+| 6.14  | '0'  | False        |
+| 6.15  | '9'  | False        |
+| 6.16  | 'd'  | False        |
+| 6.17  | '2'  | False        |
+| 6.18  | 'e'  | False        |
+| 6.19  | 'b'  | False        |
+| 6.20  | '4'  | False        |
+| 6.21  | '\n' | False        |
+| 7.0   | '#'  | False        |
+| 7.1   | ' '  | False        |
+| 7.2   | 's'  | False        |
+| 7.3   | 'e'  | False        |
+| 7.4   | 'a'  | False        |
+| 7.5   | 'l'  | False        |
+| 7.6   | 'e'  | False        |
+| 7.7   | 'd'  | False        |
+| 7.8   | ':'  | False        |
+| 7.9   | ' '  | False        |
+| 7.10  | 'o'  | False        |
+| 7.11  | 'f'  | False        |
+| 7.12  | 'f'  | False        |
+| 7.13  | ' '  | False        |
+| 7.14  | 'd'  | False        |
+| 7.15  | '0'  | False        |
+| 7.16  | '9'  | False        |
+| 7.17  | 'd'  | False        |
+| 7.18  | '2'  | False        |
+| 7.19  | 'e'  | False        |
+| 7.20  | 'b'  | False        |
+| 7.21  | '4'  | False        |
+| 7.22  | '\n' | False        |
+| 8.0   | '\n' | True         |
+| 9.0   | 'a'  | True         |
+| 9.1   | 'n'  | True         |
+| 9.2   | 'o'  | True         |
+| 9.3   | 't'  | True         |
+| 9.4   | 'h'  | True         |
+| 9.5   | 'e'  | True         |
+| 9.6   | 'r'  | True         |
+| 9.7   | ' '  | True         |
+| 9.8   | 't'  | True         |
+| 9.9   | 'e'  | True         |
+| 9.10  | 'x'  | True         |
+| 9.11  | 't'  | True         |
+| 9.12  | '\n' | False        |
+| 10.0  | '#'  | False        |
+| 10.1  | ' '  | False        |
+| 10.2  | 's'  | False        |
+| 10.3  | 'e'  | False        |
+| 10.4  | 'a'  | False        |
+| 10.5  | 'l'  | False        |
+| 10.6  | 'e'  | False        |
+| 10.7  | 'd'  | False        |
+| 10.8  | ':'  | False        |
+| 10.9  | ' '  | False        |
+| 10.10 | 'o'  | False        |
+| 10.11 | 'n'  | False        |
+| 10.12 | ' '  | False        |
+| 10.13 | '8'  | False        |
+| 10.14 | '8'  | False        |
+| 10.15 | '2'  | False        |
+| 10.16 | 'e'  | False        |
+| 10.17 | '1'  | False        |
+| 10.18 | 'f'  | False        |
+| 10.19 | 'd'  | False        |
+| 10.20 | '6'  | False        |
+| 10.21 | '\n' | False        |
+| 11.0  | '#'  | False        |
+| 11.1  | ' '  | False        |
+| 11.2  | 's'  | False        |
+| 11.3  | 'e'  | False        |
+| 11.4  | 'a'  | False        |
+| 11.5  | 'l'  | False        |
+| 11.6  | 'e'  | False        |
+| 11.7  | 'd'  | False        |
+| 11.8  | ':'  | False        |
+| 11.9  | ' '  | False        |
+| 11.10 | 'o'  | False        |
+| 11.11 | 'f'  | False        |
+| 11.12 | 'f'  | False        |
+| 11.13 | ' '  | False        |
+| 11.14 | '8'  | False        |
+| 11.15 | '8'  | False        |
+| 11.16 | '2'  | False        |
+| 11.17 | 'e'  | False        |
+| 11.18 | '1'  | False        |
+| 11.19 | 'f'  | False        |
+| 11.20 | 'd'  | False        |
+| 11.21 | '6'  | False        |
+| 11.22 | '\n' | False        |
+| 12.0  | '\n' | True         |
++-------+------+--------------+
