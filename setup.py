@@ -59,7 +59,8 @@ setuptools.setup(
             "coverage>=4.5.1,<5",
             "docutils>=0.14,<1",
             "icontract>=2.5.0",
-            "prettytable>=2.1.0,<3"
+            "prettytable>=2.1.0,<3",
+            "icontract-hypothesis>=1.1.1,<2"
         ],
     },
     package_data={"thonnycontrib.thonny_sealed": ["py.typed"]},
