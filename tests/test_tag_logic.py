@@ -7,8 +7,10 @@ import tkinter
 import unittest
 from typing import Iterable, Optional
 
+import hypothesis.strategies
 import prettytable
 from icontract import snapshot, ensure
+import icontract_hypothesis
 
 import tests.common
 import thonnycontrib.thonny_sealed
@@ -420,6 +422,27 @@ class Test_delete_against_a_naive_implementation(unittest.TestCase):
                             text_widget1))
 
                     self.assertListEqual(tag_ranges1, tag_ranges2, description)
+
+
+class Test_with_icontract_hypothesis(unittest.TestCase):
+    lines_strategy = icontract_hypothesis.infer_strategy(
+        thonnycontrib.thonny_sealed.assert_lines
+    ).map(lambda d: thonnycontrib.thonny_sealed.assert_lines(**d))
+
+    hypothesis.strategies.register_type_strategy(
+        thonnycontrib.thonny_sealed.Lines,  # type: ignore
+        lines_strategy
+    )
+
+    def test_extract_markers(self) -> None:
+        icontract_hypothesis.test_with_inferred_strategy(
+            thonnycontrib.thonny_sealed.extract_markers
+        )
+
+    def test_parse_blocks(self) -> None:
+        icontract_hypothesis.test_with_inferred_strategy(
+            thonnycontrib.thonny_sealed.parse_blocks
+        )
 
 
 if __name__ == "__main__":

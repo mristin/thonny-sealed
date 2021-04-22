@@ -18,7 +18,7 @@ from typing import (
 )
 
 import icontract
-from icontract import require, ensure
+from icontract import require, ensure, DBC
 import thonny
 import thonny.codeview
 import thonny.workbench
@@ -434,7 +434,7 @@ COMMENT_LAST_RE = re.compile(
 )
 
 
-class SealMarker:
+class SealMarker(DBC):
     """Represent the start or an end of a block."""
 
     # fmt: off
@@ -466,7 +466,7 @@ class Last(SealMarker):
     """Represent the end of a sealed block."""
 
 
-class Lines(abc.ABC, Sequence[str]):
+class Lines(DBC, Sequence[str]):
     """
     Represent a sequence of text lines.
 
@@ -502,6 +502,8 @@ class Lines(abc.ABC, Sequence[str]):
 # fmt: on
 def assert_lines(lines: Sequence[str]) -> Lines:
     """Assert that the lines are proper lines without line endings."""
+    # We have to match the keyword arguments of the ``list`` so that we can directly
+    # construct it.
     return cast(Lines, lines)
 
 
@@ -590,7 +592,7 @@ class Block:
 )
 # fmt: on
 def parse_blocks(
-    markers: List[SealMarker],
+    markers: Sequence[SealMarker],
 ) -> Tuple[Optional[List[Block]], Optional[str]]:
     """
     Parse the blocks from the given markers.
@@ -689,7 +691,9 @@ def parse_blocks(
     "Blocks non-overlapping"
 )
 # fmt: on
-def verify_blocks(lines: Lines, blocks: List[Block]) -> Tuple[List[Block], List[str]]:
+def verify_blocks(
+    lines: Lines, blocks: Sequence[Block]
+) -> Tuple[List[Block], List[str]]:
     """
     Verify that the hashes of the sealed blocks are valid.
 
