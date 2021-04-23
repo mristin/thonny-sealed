@@ -425,15 +425,6 @@ class Test_delete_against_a_naive_implementation(unittest.TestCase):
 
 
 class Test_with_icontract_hypothesis(unittest.TestCase):
-    lines_strategy = icontract_hypothesis.infer_strategy(
-        thonnycontrib.thonny_sealed.assert_lines
-    ).map(lambda d: thonnycontrib.thonny_sealed.assert_lines(**d))
-
-    hypothesis.strategies.register_type_strategy(
-        thonnycontrib.thonny_sealed.Lines,  # type: ignore
-        lines_strategy
-    )
-
     def test_extract_markers(self) -> None:
         icontract_hypothesis.test_with_inferred_strategy(
             thonnycontrib.thonny_sealed.extract_markers

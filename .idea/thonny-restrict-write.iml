@@ -7,7 +7,7 @@
       <excludeFolder url="file://$MODULE_DIR$/thonny_sealed.egg-info" />
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.8 (thonny-restrict-write) (2)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.8 (thonny-sealed)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

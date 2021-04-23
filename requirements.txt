@@ -1,2 +1,2 @@
 thonny>=3.0.0,<4
-icontract>=2.5.0
+icontract>=2.5.1

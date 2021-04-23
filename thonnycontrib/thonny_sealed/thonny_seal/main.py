@@ -105,7 +105,7 @@ def seal(
 
     result.extend(lines[blocks[-1].last.lineno + 1 :])
 
-    return thonnycontrib.thonny_sealed.assert_lines(lines=result), None
+    return thonnycontrib.thonny_sealed.Lines(lines=result), None
 
 
 def run(args: Args, stdout: TextIO, stderr: TextIO) -> int:
@@ -119,7 +119,7 @@ def run(args: Args, stdout: TextIO, stderr: TextIO) -> int:
         return 1
 
     content = args.input_path.read_text(encoding="utf-8")
-    lines = thonnycontrib.thonny_sealed.assert_lines(content.splitlines())
+    lines = thonnycontrib.thonny_sealed.Lines(content.splitlines())
     sealed_lines, error = seal(lines=lines)
     if error:
         stderr.write(
