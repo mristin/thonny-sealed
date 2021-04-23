@@ -467,11 +467,43 @@ class Last(SealMarker):
 
 
 class Lines(DBC, Sequence[str]):
-    """
-    Represent a sequence of text lines.
+    """Represent a sequence of text lines."""
 
-    Create with ``assert_lines``.
-    """
+    # fmt: off
+    @require(
+        lambda lines:
+        all('\n' not in line and '\r' not in line for line in lines)
+    )
+    # fmt: on
+    def __new__(cls, lines: Sequence[str]) -> "Lines":
+        r"""
+        Ensure the properties on the ``lines``.
+
+        Please make sure that you transfer the "ownership" immediately to Lines
+        and don't modify the original list of strings any more:
+
+        .. code-block: python
+
+            ##
+            # OK
+            ##
+
+            lines = Lines(some_text.splitlines())
+
+            ##
+            # Not OK
+            ##
+
+            some_lines = some_text.splitlines()
+            lines = Lines(some_lines)
+            # ... do something assuming ``lines`` is immutable ...
+
+            some_lines[0] = "This will break \n your logic"
+            # ERROR! lines[0] now contains a new-line which is not what you'd
+            # expect!
+
+        """
+        return cast(Lines, lines)
 
     def __add__(self, other: "Lines") -> "Lines":
         """Concatenate two list of lines."""
@@ -493,18 +525,9 @@ class Lines(DBC, Sequence[str]):
         """Get the line(s) at the given index."""
         raise NotImplementedError("Only for type annotations")
 
-
-# fmt: off
-@require(
-    lambda lines:
-    all('\n' not in line and '\r' not in line for line in lines)
-)
-# fmt: on
-def assert_lines(lines: Sequence[str]) -> Lines:
-    """Assert that the lines are proper lines without line endings."""
-    # We have to match the keyword arguments of the ``list`` so that we can directly
-    # construct it.
-    return cast(Lines, lines)
+    def __len__(self) -> int:
+        """Return the number of the lines."""
+        raise NotImplementedError("Only for type annotations")
 
 
 # fmt: off
@@ -749,7 +772,7 @@ def set_tags(text_widget: tkinter.Text) -> List[str]:
 
     Return the list of errors, if any.
     """
-    lines = assert_lines(text_widget.get("1.0", tkinter.END).splitlines())
+    lines = Lines(text_widget.get("1.0", tkinter.END).splitlines())
 
     markers = extract_markers(lines=lines)
 

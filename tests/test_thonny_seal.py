@@ -123,7 +123,7 @@ class Test_on_valid_examples(unittest.TestCase):
             )
         ]
         for text, expected_text, identifier in table:
-            lines = thonnycontrib.thonny_sealed.assert_lines(text.splitlines())
+            lines = thonnycontrib.thonny_sealed.Lines(text.splitlines())
 
             got_lines, err = main.seal(lines=lines)
             self.assertIsNone(err, identifier)
@@ -180,7 +180,7 @@ class Test_invalid_cases(unittest.TestCase):
         ]
 
         for text, expected_error, identifier in table:
-            lines = thonnycontrib.thonny_sealed.assert_lines(text.splitlines())
+            lines = thonnycontrib.thonny_sealed.Lines(text.splitlines())
 
             got_lines, err = main.seal(lines=lines)
             self.assertIsNotNone(err, identifier)
