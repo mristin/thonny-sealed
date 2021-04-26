@@ -1,5 +1,5 @@
-"""Automatically test Python code using CrossHair in Thonny."""
-import abc
+"""Restrict writing to certain areas in the code view based on code comments."""
+
 import hashlib
 import re
 import tkinter.messagebox
@@ -19,9 +19,9 @@ from typing import (
 
 import icontract
 from icontract import require, ensure, DBC
-import thonny
 import thonny.codeview
 import thonny.workbench
+
 
 name = "thonny-sealed"  # pylint: disable=invalid-name
 
@@ -32,6 +32,14 @@ name = "thonny-sealed"  # pylint: disable=invalid-name
 _console_allocated = False  # pylint: disable=invalid-name
 
 TAG_NAME = "thonny_sealed"
+
+# We need to tag the new-line character at the end of the sealed block for nicer
+# appearance. If we tagged the new-line with the main tag (corresponding to
+# ``TAG_NAME``), tkinter would join the two tags together and merge them into a single
+# tag. However, we do want to keep the blocks separated, *e.g.*, if the user enters
+# new text in-between the sealed blocks.
+TAG_START_NAME = "thonny_sealed_start"
+TAG_END_NAME = "thonny_sealed_end"
 
 T = TypeVar("T")  # pylint: disable=invalid-name
 
@@ -423,13 +431,13 @@ def pin_deletable_ranges(
 
 COMMENT_FIRST_RE = re.compile(
     r"^"
-    r"(?P<prefix>\s*#\s*(sealed|Sealed|SEALED)\s*(:|\s)\s*(on|On|ON))"
+    r"(?P<prefix>\s*#+\s*(sealed|Sealed|SEALED)\s*(:|\s)\s*(on|On|ON|🡇|🡻))"
     r"(?P<suffix>(\s*|\s+.*))?$"
 )
 
 COMMENT_LAST_RE = re.compile(
     r"^"
-    r"(?P<prefix>\s*#\s*(sealed|Sealed|SEALED)\s*(:|\s)\s*(off|Off|OFF))"
+    r"(?P<prefix>\s*#+\s*(sealed|Sealed|SEALED)\s*(:|\s)\s*(off|Off|OFF|🡅|🡹))"
     r"(?P<suffix>(\s*|\s+.*))?$"
 )
 
@@ -799,12 +807,27 @@ def set_tags(text_widget: tkinter.Text) -> List[str]:
 
         text_widget.tag_add(TAG_NAME, tag_start, tag_end)
 
+        # Add a separate tag for the new-line character for nicer appearance so that
+        # the whole line is highlighted
+        text_widget.tag_add(
+            TAG_START_NAME,
+            f"{block.first.lineno + 1}.0",
+            f"{block.first.lineno + 1}.end+1c",
+        )
+
+        text_widget.tag_add(
+            TAG_END_NAME,
+            f"{block.last.lineno + 1}.0",
+            f"{block.last.lineno + 1}.end+1c",
+        )
+
     return []
 
 
 def set_seal_appearance(text_widget: tkinter.Text) -> None:
     """Set the appearance of the sealed blocks."""
-    text_widget.tag_config(TAG_NAME, background="lightgrey")
+    text_widget.tag_config(TAG_START_NAME, underline=True)
+    text_widget.tag_config(TAG_END_NAME, underline=True)
 
 
 # fmt: off
