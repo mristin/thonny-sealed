@@ -60,7 +60,8 @@ setuptools.setup(
             "docutils>=0.14,<1",
             "icontract>=2.5.0",
             "prettytable>=2.1.0,<3",
-            "icontract-hypothesis>=1.1.2,<2"
+            "icontract-hypothesis>=1.1.2,<2",
+            "twine"
         ],
     },
     package_data={"thonnycontrib.thonny_sealed": ["py.typed"],
