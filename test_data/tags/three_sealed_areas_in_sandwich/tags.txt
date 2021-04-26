@@ -1,7 +1,7 @@
-Index        Char        Tag starts           Tag ends
+Index        Char        Tag starts                                Tag ends
 1.0          'a'
 1.1          '\n'
-2.0          '#'         thonny_sealed
+2.0          '#'         thonny_sealed, thonny_sealed_start
 2.1          ' '
 2.2          's'
 2.3          'e'
@@ -23,14 +23,14 @@ Index        Char        Tag starts           Tag ends
 2.19         'b'
 2.20         '3'
 2.21         '\n'
-3.0          't'
+3.0          't'                                                   thonny_sealed_start
 3.1          'e'
 3.2          'x'
 3.3          't'
 3.4          ' '
 3.5          'b'
 3.6          '\n'
-4.0          '#'
+4.0          '#'         thonny_sealed_end
 4.1          ' '
 4.2          's'
 4.3          'e'
@@ -52,15 +52,15 @@ Index        Char        Tag starts           Tag ends
 4.19         '2'
 4.20         'b'
 4.21         '3'
-4.22         '\n'                             thonny_sealed
-5.0          't'
+4.22         '\n'                                                  thonny_sealed
+5.0          't'                                                   thonny_sealed_end
 5.1          'e'
 5.2          'x'
 5.3          't'
 5.4          ' '
 5.5          'c'
 5.6          '\n'
-6.0          '#'         thonny_sealed
+6.0          '#'         thonny_sealed, thonny_sealed_start
 6.1          ' '
 6.2          's'
 6.3          'e'
@@ -82,14 +82,14 @@ Index        Char        Tag starts           Tag ends
 6.19         'd'
 6.20         '8'
 6.21         '\n'
-7.0          't'
+7.0          't'                                                   thonny_sealed_start
 7.1          'e'
 7.2          'x'
 7.3          't'
 7.4          ' '
 7.5          'd'
 7.6          '\n'
-8.0          '#'
+8.0          '#'         thonny_sealed_end
 8.1          ' '
 8.2          's'
 8.3          'e'
@@ -111,15 +111,15 @@ Index        Char        Tag starts           Tag ends
 8.19         'b'
 8.20         'd'
 8.21         '8'
-8.22         '\n'                             thonny_sealed
-9.0          't'
+8.22         '\n'                                                  thonny_sealed
+9.0          't'                                                   thonny_sealed_end
 9.1          'e'
 9.2          'x'
 9.3          't'
 9.4          ' '
 9.5          'e'
 9.6          '\n'
-10.0         '#'         thonny_sealed
+10.0         '#'         thonny_sealed, thonny_sealed_start
 10.1         ' '
 10.2         's'
 10.3         'e'
@@ -141,14 +141,14 @@ Index        Char        Tag starts           Tag ends
 10.19        'f'
 10.20        '6'
 10.21        '\n'
-11.0         't'
+11.0         't'                                                   thonny_sealed_start
 11.1         'e'
 11.2         'x'
 11.3         't'
 11.4         ' '
 11.5         'f'
 11.6         '\n'
-12.0         '#'
+12.0         '#'         thonny_sealed_end
 12.1         ' '
 12.2         's'
 12.3         'e'
@@ -170,8 +170,8 @@ Index        Char        Tag starts           Tag ends
 12.19        '5'
 12.20        'f'
 12.21        '6'
-12.22        '\n'                             thonny_sealed
-13.0         't'
+12.22        '\n'                                                  thonny_sealed
+13.0         't'                                                   thonny_sealed_end
 13.1         'e'
 13.2         'x'
 13.3         't'

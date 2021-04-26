@@ -1,5 +1,5 @@
-Index        Char        Tag starts           Tag ends
-1.0          '#'         thonny_sealed
+Index        Char        Tag starts                                Tag ends
+1.0          '#'         thonny_sealed, thonny_sealed_start
 1.1          ' '
 1.2          's'
 1.3          'e'
@@ -21,7 +21,7 @@ Index        Char        Tag starts           Tag ends
 1.19         '0'
 1.20         '5'
 1.21         '\n'
-2.0          'S'
+2.0          'S'                                                   thonny_sealed_start
 2.1          'o'
 2.2          'm'
 2.3          'e'
@@ -31,7 +31,7 @@ Index        Char        Tag starts           Tag ends
 2.7          'n'
 2.8          'g'
 2.9          '\n'
-3.0          '#'
+3.0          '#'         thonny_sealed_end
 3.1          ' '
 3.2          's'
 3.3          'e'
@@ -53,8 +53,8 @@ Index        Char        Tag starts           Tag ends
 3.19         '8'
 3.20         '0'
 3.21         '5'
-3.22         '\n'                             thonny_sealed
-4.0          'M'
+3.22         '\n'                                                  thonny_sealed
+4.0          'M'                                                   thonny_sealed_end
 4.1          'o'
 4.2          'r'
 4.3          'e'
