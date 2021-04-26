@@ -28,7 +28,7 @@ thonny-sealed is a plug-in for `Thonny IDE`_ to restrict writing to certain bloc
 .. _Thonny IDE: https://thonny.org/
 
 This is especially practical for instructional sessions such as classroom exercises.
-The teacher prepares the exercises and demarcates the "sealed" blocks using special comments (``# sealed: on`` and ``# sealed: off``).
+The teacher prepares the exercises and demarcates the "sealed" blocks using special comments (``# sealed: on`` and ``# sealed: off`` or, more visually appealing, ``# sealed: 🡻`` and ``# sealed: 🡹``, respectively).
 
 Since we do not want the students to inadvertently introduce new sealed blocks during the exercises, the comment blocks are further sealed by using a hash of the content and their order.
 To that end, the plug-in provides a command-line utility ``thonny-seal``.
@@ -37,13 +37,16 @@ Once the content was properly sealed, the teacher distributes the exercises.
 The students open them in Thonny with ``thonny-sealed`` plug-in installed.
 The sealed blocks can be copied in the editor, but not modified anymore.
 
-TODO: add screenshot
+.. image:: https://raw.githubusercontent.com/mristin/thonny-sealed/main/readme/screenshot.png
+    :alt: Screenshot of the code view with the sealed content
+    :width: 1290
+    :height: 883
 
 Installation
 ============
 In Thonny
 ---------
-TODO: get images
+
 The plug-in can be easily installed *via* Thonny.
 Go to ``Tools`` menu and select ``Manage plug-ins...``:
 
@@ -72,17 +75,8 @@ Usage
 Thonny-sealed inspects the blocks of code in your files based on the special comments.
 The user is prevented from editing the content within the sealed blocks.
 
-Before you can use the plug-in on a file, you first need to "seal" the blocks.
-Adding sealed blocks in the file *while you are editing it* can be very confusing for the user.
-Notably, it can be really annoying if new sealed blocks are added by the user simply by copy/pasting a part of the code which can not be removed anymore.
-To that end, there is a separate "sealing" tool, ``thonny-seal`` which will hash the content and the order of the sealed blocks and add them to comments.
-
-The plug-in finally analyzes the comments and checks that the hashes are conforming to the expected values.
-Only the properly sealed blocks are made unmodifiable.
-
-Here is the workflow:
-
 * Mark the start of every block with a comment line ``# sealed: on``. Analogously, mark the end of a sealed block with ``# sealed: off``.
+ Alternatively, you can use the visually more appealing comments ``# sealed: 🡻`` and ``# sealed: 🡹``, respectively.
 
   Here is an example file:
 
@@ -95,7 +89,7 @@ Here is the workflow:
         """Do something."""
         # sealed: off
 
-* Call in the terminal (where plug-in has been installed):
+* Call in the terminal (where plug-in has been installed) to "seal" the blocks with the hashes:
 
 .. code-block::
 
