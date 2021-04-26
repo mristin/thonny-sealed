@@ -932,11 +932,7 @@ def patch_code_view() -> None:
     thonny.codeview.CodeViewText.direct_delete = direct_delete
 
 
-def _load_plugin(workbench: thonny.workbench.Workbench) -> None:
+def load_plugin() -> None:
     """Load the plug-in in Thonny."""
     # pylint: disable=unused-argument
     patch_code_view()
-
-
-if thonny.get_workbench() is not None:
-    _load_plugin(workbench=thonny.get_workbench())
