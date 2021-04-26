@@ -21,7 +21,7 @@ setuptools.setup(
     ),
     long_description=long_description,
     url="https://github.com/mristin/thonny-sealed",
-    packages=["thonnycontrib.thonny_sealed"],
+    packages=["thonnycontrib.thonny_sealed", "thonny_seal"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Environment :: MacOS X",
@@ -63,13 +63,12 @@ setuptools.setup(
             "icontract-hypothesis>=1.1.2,<2"
         ],
     },
-    package_data={"thonnycontrib.thonny_sealed": ["py.typed"]},
+    package_data={"thonnycontrib.thonny_sealed": ["py.typed"],
+                  "thonny_seal": ["py.typed"]},
     # fmt: on
     data_files=[(".", ["LICENSE", "README.rst", "requirements.txt"])],
     entry_points={
-        "console_scripts": [
-            "thonny-seal = thonnycontrib.thonny_sealed.thonny_seal.main:entry_point"
-        ],
+        "console_scripts": ["thonny-seal = thonny_seal.main:entry_point"],
         "hypothesis": ["_ = icontract_hypothesis"],
     },
 )
