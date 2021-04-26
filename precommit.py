@@ -15,6 +15,7 @@ class Step(enum.Enum):
     PYDOCSTYLE = "pydocstyle"
     TEST = "test"
     DOCTEST = "doctest"
+    CHECK_README = "check_readme"
 
 
 def main() -> int:
@@ -146,6 +147,14 @@ def main() -> int:
         subprocess.check_call([sys.executable, "-m", "doctest", "README.rst"])
     else:
         print("Skipped doctesting.")
+
+    if Step.CHECK_README in selects and Step.CHECK_README not in skips:
+        print("Checking the restructured text of the readme...")
+        subprocess.check_call(
+            [sys.executable, "setup.py", "check", "--restructuredtext", "--strict"]
+        )
+    else:
+        print("Skipped checking the restructured text of the readme.")
 
     return 0
 

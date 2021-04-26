@@ -75,8 +75,7 @@ Usage
 Thonny-sealed inspects the blocks of code in your files based on the special comments.
 The user is prevented from editing the content within the sealed blocks.
 
-* Mark the start of every block with a comment line ``# sealed: on``. Analogously, mark the end of a sealed block with ``# sealed: off``.
- Alternatively, you can use the visually more appealing comments ``# sealed: 🡻`` and ``# sealed: 🡹``, respectively.
+* Mark the start of every block with a comment line ``# sealed: on``. Analogously, mark the end of a sealed block with ``# sealed: off``. Alternatively, you can use the visually more appealing comments ``# sealed: 🡻`` and ``# sealed: 🡹``, respectively.
 
   Here is an example file:
 
