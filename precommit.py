@@ -86,10 +86,21 @@ def main() -> int:
         print("Skipped black'ing.")
 
     if Step.MYPY in selects and Step.MYPY not in skips:
-        print("Mypy'ing...")
+        print("Mypy'ing thonnycontrib...")
         # fmt: off
-        mypy_targets = ["thonnycontrib", "tests"]
-        subprocess.check_call(["mypy", "--strict"] + mypy_targets, cwd=str(repo_root))
+        subprocess.check_call(
+            [
+                "mypy", "--strict", "--namespace-packages",
+                "--package", "thonnycontrib"
+            ],
+            cwd=str(repo_root))
+
+        print("Mypy'ing thonny_seal and tests...")
+        subprocess.check_call(
+            [
+                "mypy", "--strict", "thonny_seal", "tests"
+            ]
+        )
         # fmt: on
     else:
         print("Skipped mypy'ing.")
@@ -97,7 +108,7 @@ def main() -> int:
     if Step.PYLINT in selects and Step.PYLINT not in skips:
         # fmt: off
         print("Pylint'ing...")
-        pylint_targets = ["thonnycontrib"]
+        pylint_targets = ["thonnycontrib", "thonny_seal"]
         subprocess.check_call(
             ["pylint", "--rcfile=pylint.rc"] + pylint_targets, cwd=str(repo_root)
         )
@@ -107,7 +118,9 @@ def main() -> int:
 
     if Step.PYDOCSTYLE in selects and Step.PYDOCSTYLE not in skips:
         print("Pydocstyle'ing...")
-        subprocess.check_call(["pydocstyle", "thonnycontrib"], cwd=str(repo_root))
+        subprocess.check_call(
+            ["pydocstyle", "thonnycontrib", "thonny_seal"], cwd=str(repo_root)
+        )
     else:
         print("Skipped pydocstyle'ing.")
 
