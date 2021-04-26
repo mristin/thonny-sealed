@@ -6,7 +6,7 @@ import textwrap
 import unittest
 
 import thonnycontrib.thonny_sealed
-from thonnycontrib.thonny_sealed.thonny_seal import main
+import thonny_seal.main
 
 
 class Test_on_valid_examples(unittest.TestCase):
@@ -125,7 +125,7 @@ class Test_on_valid_examples(unittest.TestCase):
         for text, expected_text, identifier in table:
             lines = thonnycontrib.thonny_sealed.Lines(text.splitlines())
 
-            got_lines, err = main.seal(lines=lines)
+            got_lines, err = thonny_seal.main.seal(lines=lines)
             self.assertIsNone(err, identifier)
             self.assertIsNotNone(got_lines, identifier)
             assert got_lines is not None
@@ -182,7 +182,7 @@ class Test_invalid_cases(unittest.TestCase):
         for text, expected_error, identifier in table:
             lines = thonnycontrib.thonny_sealed.Lines(text.splitlines())
 
-            got_lines, err = main.seal(lines=lines)
+            got_lines, err = thonny_seal.main.seal(lines=lines)
             self.assertIsNotNone(err, identifier)
             self.assertEqual(expected_error, err)
             self.assertIsNone(got_lines, identifier)
@@ -190,15 +190,15 @@ class Test_invalid_cases(unittest.TestCase):
 
 class Test_parsing_of_command_line_arguments(unittest.TestCase):
     def test_path_no_write(self) -> None:
-        parser = main.set_up_parser()
-        args = main.interpret_args(parser.parse_args(args=['--input', 'some/path.py']))
+        parser = thonny_seal.main.set_up_parser()
+        args = thonny_seal.main.interpret_args(parser.parse_args(args=['--input', 'some/path.py']))
 
         self.assertEqual(pathlib.Path('some/path.py'), args.input_path)
         self.assertFalse(args.write)
 
     def test_path_write(self) -> None:
-        parser = main.set_up_parser()
-        args = main.interpret_args(parser.parse_args(
+        parser = thonny_seal.main.set_up_parser()
+        args = thonny_seal.main.interpret_args(parser.parse_args(
             args=['--input', 'some/path.py', '--write']))
 
         self.assertEqual(pathlib.Path('some/path.py'), args.input_path)
@@ -213,9 +213,9 @@ class Test_run(unittest.TestCase):
             stdout = io.StringIO()
             stderr = io.StringIO()
 
-            args = main.Args(input_path=pth, write=False)
+            args = thonny_seal.main.Args(input_path=pth, write=False)
 
-            exit_code = main.run(args=args, stdout=stdout, stderr=stderr)
+            exit_code = thonny_seal.main.run(args=args, stdout=stdout, stderr=stderr)
             self.assertEqual(1, exit_code)
 
             self.assertEqual('', stdout.getvalue())
@@ -239,9 +239,9 @@ class Test_run(unittest.TestCase):
             stdout = io.StringIO()
             stderr = io.StringIO()
 
-            args = main.Args(input_path=pth, write=False)
+            args = thonny_seal.main.Args(input_path=pth, write=False)
 
-            exit_code = main.run(args=args, stdout=stdout, stderr=stderr)
+            exit_code = thonny_seal.main.run(args=args, stdout=stdout, stderr=stderr)
             self.assertEqual(0, exit_code)
 
             self.assertListEqual(
@@ -274,9 +274,9 @@ class Test_run(unittest.TestCase):
             stdout = io.StringIO()
             stderr = io.StringIO()
 
-            args = main.Args(input_path=pth, write=True)
+            args = thonny_seal.main.Args(input_path=pth, write=True)
 
-            exit_code = main.run(args=args, stdout=stdout, stderr=stderr)
+            exit_code = thonny_seal.main.run(args=args, stdout=stdout, stderr=stderr)
             self.assertEqual(0, exit_code)
 
             got_text = pth.read_text(encoding='utf-8')
