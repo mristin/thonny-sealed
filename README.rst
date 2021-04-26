@@ -59,8 +59,8 @@ Search for ``thonny-sealed`` on PyPI and click on the link to install it:
 
 .. image:: https://raw.githubusercontent.com/mristin/thonny-sealed/main/readme/search_on_pypi.png
     :alt: Search on PyPI
-    :width: 1251
-    :height: 984
+    :width: 1212
+    :height: 459
 
 With pip
 --------
